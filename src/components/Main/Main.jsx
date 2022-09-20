@@ -12,7 +12,14 @@ const Main = () => {
 
   return (
     <div className="main">
-      {state.isLoggedIn && state.isRegistered ? <CardList data={data} setData={setData} /> : <div>No estás logueado</div>}
+      {state.isLoggedIn && state.isRegistered ? <CardList data={data} setData={setData} /> : (<>
+        <div>No estás logueado</div>
+        <div>
+          <a href="/register">
+            <button>Registrarse</button>
+          </a>
+        </div>
+      </>)}
     </div>
   );
 };
